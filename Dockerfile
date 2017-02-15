@@ -67,10 +67,8 @@ RUN set -ex \
 
 RUN apt-get install libxml2-dev libxslt1-dev zlib1g-dev libffi-dev phantomjs
 
-
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
-
 
 RUN 
 
