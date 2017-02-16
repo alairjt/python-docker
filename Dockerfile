@@ -90,6 +90,8 @@ RUN apt-get install -qyy \
     -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
     python-virtualenv pypy libffi6 openssl
 
+RUN pip install --no-cache-dir virtualenv
+
 RUN virtualenv -p /usr/bin/pypy /appenv
 
 RUN . /appenv/bin/activate
