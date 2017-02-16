@@ -86,10 +86,13 @@ RUN ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
 
 RUN phantomjs --version
 
+RUN apt-get install -qyy \
+    -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
+    python-virtualenv pypy libffi6 openssl
 
+RUN virtualenv -p /usr/bin/pypy /appenv
 
-# install "virtualenv", since the vast majority of users of this image will want it
-RUN pip install --no-cache-dir virtualenv
+RUN . /appenv/bin/activate
 
 
 CMD ["python2"]
