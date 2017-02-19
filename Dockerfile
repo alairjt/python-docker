@@ -66,11 +66,13 @@ RUN set -ex \
 
 RUN apt-get update
 
-RUN apt-get install -y libxml2-dev libxslt1-dev zlib1g-dev libffi-dev build-essential chrpath libssl-dev libxft-dev \
-    python-dev python-numpy python-scipy python-pymad python-pip \
+RUN apt-get install -y libxml2-dev libxslt1-dev zlib1g-dev libffi-dev build-essential chrpath libssl-dev libxft-dev libsvm-tools \
+    python-dev python-qt4 python-numpy python-scipy python-pymad python-pip python-pyao python-matplotlib \
     libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 
 RUN cd ~
+
+RUN pip install cython
 
 ENV PHANTOM_JS phantomjs-1.9.8-linux-x86_64
 
