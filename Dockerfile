@@ -66,11 +66,9 @@ RUN set -ex \
 
 RUN apt-get update
 
-RUN apt-get install -y libxml2-dev libxslt1-dev zlib1g-dev libffi-dev build-essential chrpath libssl-dev libxft-dev
-
-RUN apt-get install -y libfreetype6 libfreetype6-dev
-
-RUN apt-get install -y libfontconfig1 libfontconfig1-dev
+RUN apt-get install -y libxml2-dev libxslt1-dev zlib1g-dev libffi-dev build-essential chrpath libssl-dev libxft-dev \
+    python-dev python-numpy python-scipy python-pymad python-pip \
+    libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 
 RUN cd ~
 
@@ -83,8 +81,6 @@ RUN tar xvjf $PHANTOM_JS.tar.bz2
 RUN mv $PHANTOM_JS /usr/local/share
 
 RUN ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
-
-RUN phantomjs --version
 
 
 CMD ["python2"]
