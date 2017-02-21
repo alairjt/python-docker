@@ -67,7 +67,7 @@ RUN set -ex \
 RUN apt-get update
 
 RUN apt-get install -y libsvm-tools libxml2-dev libxslt1-dev zlib1g-dev libffi-dev build-essential chrpath libssl-dev libxft-dev \
-    python-dev python-qt4 python-numpy python-scipy python-pymad python-pip python-pyao python-matplotlib python-libsvm \
+    python-dev python-qt4 python-numpy python-scipy python-pymad python-pip python-pyao python-matplotlib \
     libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 
 RUN cd ~
